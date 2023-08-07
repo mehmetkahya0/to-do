@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>To-Do</header> 
+    
+    <div class="content" id="todo-posts">
+        <!-- Blog yazıları bu alana dinamik olarak eklenecek -->
+    </div>
+
+    <!-- Blog yazma sayfasını açmak için buton -->
+    <button id="add-todo-button" class="add">+</button>
+
+    <!-- Blog postlarını silmek için buton -->
+    <button id="delete-posts-button" class="x">x</button>
+
+    <div id="todo-writing-page" style="display: none;">
+        <h1>Create a Task</h1>
+        <input type="text" id="todo-title" placeholder="Header">
+        <textarea id="todo-content" placeholder="Content"></textarea>
+        <button id="save-todo-button">Save</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
