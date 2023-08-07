@@ -218,3 +218,44 @@ input[type="checkbox"]:checked::before {
   top: 1px;
   left: 5px;
 }
+
+
+.contact{
+    font-size: 2rem;
+    right: 0;
+    top: 0;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    position: absolute;
+    margin-right: 2%;
+    opacity: 0.5;
+}
+
+
+.social-media {
+    width: fit-content;
+    height: auto;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .social-media a {
+    margin: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+    display: inline-block;
+    color: var(--main-fonts-color);
+  }
+  
+  .social-media a i {
+    cursor: pointer;
+  }
+  
+  .social-media a:hover {
+    color: rgba(255, 255, 255, 0.515);
+    text-shadow: 0 0 10px rgb(6, 143, 197);
+  }
+
