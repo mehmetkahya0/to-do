@@ -258,3 +258,30 @@ input[type="checkbox"]:checked::before {
     text-shadow: 0 0 10px rgb(6, 143, 197);
   }
 
+.button{
+    color: black;
+    background:#c3c3c3;
+    font-weight: bolder!important;
+    border: none ;
+   outline:none!important;
+    box-sizing :border-box;
+    transition:.8s ease all;
+    -webkit-transition:.8s ease all;
+    -moz-transition:.8s ease all;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #353535;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.privacy{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    opacity: 0.5;
+
+}
