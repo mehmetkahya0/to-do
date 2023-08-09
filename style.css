@@ -37,7 +37,7 @@
 }
 
 header{
-    font-size: xx-large;
+    font-size: xxx-large;
     text-align: center ;
     font-weight: bolder;
     width: 100%;
@@ -167,18 +167,26 @@ header{
 }
   
 #save-todo-button {
+    display: block;
     padding: 10px;
     font-size: 18px;
     background-color: #007bff;
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
     height: 50px;
+    max-width: 100%;
+    min-width: 25%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* center a vertical*/
+    margin: auto;
+    transition:.3s ease all;
+    transform: translateY(-50%);
+
+
+
     
 }
   
@@ -278,10 +286,12 @@ input[type="checkbox"]:checked::before {
 }
 
 .privacy{
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    display:block ;
+    position: fixed;
+    top: 93vh;
     padding: 20px;
     opacity: 0.5;
+    left: 1%;
+    width: auto;
 
 }
