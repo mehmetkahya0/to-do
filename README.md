@@ -1,6 +1,6 @@
 # 🎯 To-Do (WIP)
 
-**Live Demo**: https://to-do.mehmet0.repl.co
+**Live Demo**: mehmetkahya0.github.io/to-do/
 
 
 The To-Do App is a simple and intuitive task management application that helps you stay organized and focused on your daily tasks. This app allows you to create, manage, and track your to-do list efficiently.

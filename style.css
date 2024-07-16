@@ -1,90 +1,85 @@
-:root{
-    background-color: rgba(0, 0, 0, 0.902);
-    color: #fff;
-    font-family: monospace;
-    width: 100%;
-    height: 100vh;
-
+:root {
+  background-color: rgba(255, 255, 255, 0.902);
+  color: black !important;
+  font-family: "Poppins", sans-serif !important;
+  width: 100%;
+  height: 100vh;
 }
 .add {
-    display:block ;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-.x{
-    display:block ;
-    position: fixed;
-    bottom: 100px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    background-color: #ff2600;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-header{
-    font-size: xxx-large;
-    text-align: center ;
-    font-weight: bolder;
-    width: 100%;
-    margin-top: 3%;
-    margin-bottom: 1%;
+.x {
+  display: block;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  background-color: #ff2600;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-
-.content{
-    max-width: 100%;
-    min-width: 50%;
-    border: 10px white;
-    padding: 3%;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    height: fit-content;
+header {
+  text-align: center;
+  font-weight: bolder;
+  width: 100%;
+  margin-top: 3%;
+  margin-bottom: 1%;
 }
 
-.post{
-    max-width: 100%;
-    min-width: 50%;
-    border: 2px rgba(191, 190, 204, 0.203);
-    padding:.5em;
-    position: relative;
-    cursor: pointer;
-    border-radius: 5px;
-    border-style: ridge;
-    margin: 2%;
-
+.content {
+  max-width: 100%;
+  min-width: 50%;
+  border: 10px white;
+  padding: 3%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
 }
 
-
-.mainHeader{
-    font-weight: bolder;
-    font-size: x-large;
-    line-height: 175%;
+.post {
+  max-width: 100%;
+  min-width: 50%;
+  border: 2px rgba(191, 190, 204, 0.203);
+  padding: 0.5em;
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+  border-style: ridge;
+  margin: 2%;
 }
 
-.text{
-    font-size: medium;
-    font-weight: lighter;
-    line-height: 125%;
-    color: rgba(251, 251, 251, 0.82);
+.mainHeader {
+  font-weight: bolder;
+  font-size: x-large;
+  line-height: 175%;
 }
 
-#add-todo-button{
+.text {
+  font-size: medium;
+  font-weight: lighter;
+  line-height: 125%;
+  color: rgba(251, 251, 251, 0.82);
+}
+
+#add-todo-button {
   position: fixed;
   bottom: 100px;
   right: 20px;
@@ -98,104 +93,97 @@ header{
   cursor: pointer;
 }
 
-#delete-posts-button{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    background-color: #ff2600;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
+#delete-posts-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  background-color: #ff2600;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 #todo-writing-page {
-    display: none;
-    padding: 10px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  
+  display: none;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 #todo-writing-page h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
-  
+
 #todo-form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-  
-#todo-title{
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 18px; 
-    max-width: 90%;
-    min-width: 50%;
-    margin: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-#todo-content {
-    margin: 10px;
-    max-width: 80%;
-    min-width: 50%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px #1800d0;
-    border-radius: 5px;
-    font-size: 18px;
-    height: 250px;
-    border-style: dotted;
-}
-  
 #todo-title {
-    order: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 18px;
+  max-width: 90%;
+  min-width: 50%;
+  margin: 10px;
 }
-  
+
 #todo-content {
-    order: 2;
+  margin: 10px;
+  max-width: 80%;
+  min-width: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px #1800d0;
+  border-radius: 5px;
+  font-size: 18px;
+  height: 250px;
+  border-style: dotted;
 }
-  
+
+#todo-title {
+  order: 1;
+}
+
+#todo-content {
+  order: 2;
+}
+
 #save-todo-button {
-    display: block;
-    padding: 10px;
-    font-size: 18px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    height: 50px;
-    max-width: 100%;
-    min-width: 25%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* center a vertical*/
-    margin: auto;
-    transition:.3s ease all;
-    transform: translateY(-50%);
-
-
-
-    
+  display: block;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 50px;
+  max-width: 100%;
+  min-width: 25%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* center a vertical*/
+  margin: auto;
+  transition: 0.3s ease all;
+  transform: translateY(-50%);
 }
-  
+
 #save-todo-button:hover {
-    background-color: #0760c0;
+  background-color: #0760c0;
 }
-
-
-
 
 /* Checkbox için özel stil */
 input[type="checkbox"] {
@@ -210,13 +198,13 @@ input[type="checkbox"] {
   cursor: pointer;
   position: relative;
   margin-right: 10px;
- }
-  
+}
+
 /* Stil için seçili checkbox durumu */
 input[type="checkbox"]:checked {
   background-color: #ff4400;
 }
-  
+
 /* Seçili checkbox için işaretleme stil */
 input[type="checkbox"]:checked::before {
   content: "\2714"; /* Unicode işareti ✓ */
@@ -227,71 +215,71 @@ input[type="checkbox"]:checked::before {
   left: 5px;
 }
 
-.contact{
-    font-size: 2rem;
-    right: 0;
-    top: 0;
-    margin-top: 2%;
-    margin-bottom: 1%;
-    position: absolute;
-    margin-right: 2%;
-    opacity: 0.5;
+.contact {
+  font-size: 2rem;
+  right: 0;
+  top: 0;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  position: absolute;
+  margin-right: 2%;
+  opacity: 0.5;
+  color: black !important;
 }
-
 
 .social-media {
-    width: fit-content;
-    height: auto;
-    padding: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .social-media a {
-    margin: 5px;
-    font-size: 1.5rem;
-    text-align: center;
-    display: inline-block;
-    color: var(--main-fonts-color);
-  }
-  
-  .social-media a i {
-    cursor: pointer;
-  }
-  
-  .social-media a:hover {
-    color: rgba(255, 255, 255, 0.515);
-    text-shadow: 0 0 10px rgb(6, 143, 197);
-  }
-
-.button{
-    color: black;
-    background:#c3c3c3;
-    font-weight: bolder!important;
-    border: none ;
-   outline:none!important;
-    box-sizing :border-box;
-    transition:.8s ease all;
-    -webkit-transition:.8s ease all;
-    -moz-transition:.8s ease all;
-    cursor: pointer;
-    box-shadow: 0px 0px 10px #353535;
-    padding: 10px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    border-radius: 7px;
+  width: fit-content;
+  height: auto;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  color: black !important;
 }
 
-.privacy{
-    display:block ;
-    position: fixed;
-    top: 93vh;
-    padding: 20px;
-    opacity: 0.5;
-    left: 1%;
-    width: auto;
+.social-media a {
+  margin: 5px;
+  font-size: 1.5rem;
+  text-align: center;
+  display: inline-block;
+  color: black !important;
+}
 
+.social-media a i {
+  cursor: pointer;
+}
+
+.social-media a:hover {
+  color: rgba(0, 0, 0, 0.515) !important;
+  text-shadow: 0 0 10px rgb(6, 143, 197);
+}
+
+.button {
+  color: black;
+  background: #c3c3c3;
+  font-weight: bolder !important;
+  border: none;
+  outline: none !important;
+  box-sizing: border-box;
+  transition: 0.8s ease all;
+  -webkit-transition: 0.8s ease all;
+  -moz-transition: 0.8s ease all;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px #353535;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+}
+
+.privacy {
+  display: block;
+  position: fixed;
+  top: 93vh;
+  padding: 20px;
+  opacity: 0.5;
+  left: 1%;
+  width: auto;
 }
