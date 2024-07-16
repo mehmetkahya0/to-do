@@ -97,13 +97,13 @@ header {
 .post {
   max-width: 100%;
   min-width: 50%;
-  border: 2px rgba(191, 190, 204, 0.203);
   padding: 0.5em;
   position: relative;
   cursor: pointer;
   border-radius: 5px;
   border-style: ridge;
   margin: 2%;
+  background-color: rgb(255, 255, 255);
 }
 
 .mainHeader {
@@ -116,7 +116,7 @@ header {
   font-size: medium;
   font-weight: lighter;
   line-height: 125%;
-  color: rgba(255, 34, 0, 0.82);
+  color: rgba(0, 0, 0, 0.82);
 }
 
 #add-todo-button {
