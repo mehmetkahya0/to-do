@@ -1,61 +1,47 @@
-<!--- Last Update: 17 july 2024 -->
-<!----- TODO: solve save button position, -->
 <!DOCTYPE html>
-<html lang="en-EN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>to-do</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
     <header>
-      <h1>
-        <i class="fas fa-tasks"></i>
-        To-Do
-      </h1>
+        <h1><i class="fas fa-tasks"></i> To-Do</h1>
     </header>
-    <div class="content" id="todo-posts">
-      <!-- Blog yazıları bu alana dinamik olarak eklenecek -->
-    </div>
-
-    <!-- Blog yazma sayfasını açmak için buton -->
-    <button id="add-todo-button" class="add">+</button>
-
-    <!-- Blog postlarını silmek için buton -->
-    <button id="delete-posts-button" class="x">x</button>
-
-    <div id="todo-writing-page" style="display: none">
-      <h1>Create a Task</h1>
-      <input type="text" id="todo-title" placeholder="Header" />
-      <textarea id="todo-content" placeholder="Content"></textarea>
-      <button id="save-todo-button">Save</button>
-    </div>
-
-    <div class="privacy">
-      <a href="privacy/privacy.html" class="button">privacy policy</a>
-    </div>
-
-    <div class="contact">
-      <div class="social-media">
-        <a href="mailto:mehmetkahyakas5@gmail.com" target="_blank"
-          ><i class="fas fa-envelope"></i
-        ></a>
-        <a href="https://github.com/mehmetkahya0" target="_blank"
-          ><i class="fab fa-github"></i
-        ></a>
-      </div>
-    </div>
-
+    <main>
+        <div id="todo-posts" class="content"></div>
+        <div id="todo-controls">
+            <button id="add-todo-button" class="add">+</button>
+            <button id="delete-posts-button" class="delete">x</button>
+        </div>
+        <div id="todo-writing-page" class="hidden">
+            <h1>Create a Task</h1>
+            <input type="text" id="todo-title" placeholder="Header">
+            <textarea id="todo-content" placeholder="Content"></textarea>
+            <select id="todo-priority">
+              <option value="High">High</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Low">Low</option>
+          </select>
+            <button id="save-todo-button">Save</button>
+        </div>
+    </main>
+    <footer>
+        <div class="privacy">
+            <a href="privacy/privacy.html" class="button">Privacy Policy</a>
+        </div>
+        <div class="contact">
+            <div class="social-media">
+                <a href="mailto:mehmetkahyakas5@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/mehmetkahya0"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

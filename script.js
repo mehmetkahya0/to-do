@@ -1,98 +1,99 @@
-let todoPosts = []; // Blog yazılarınızı burada bir dizi içinde tutun
+let todoPosts = [];
 
-// Fonksiyon: Blog yazılarını ana sayfaya ekler
 function displayTodoPosts() {
-  const todoPostContainer = document.getElementById("todo-posts");
-  todoPostContainer.innerHTML = "";
+    const todoPostContainer = document.getElementById("todo-posts");
+    let postsHTML = "";
 
-  todoPosts.forEach((post, index) => {
-    const postHTML = `
-      <div class="post">
-        <div class="mainHeader">${post.title}</div>
-        <div class="text"><p>${post.content}</p></div>
-        <input type="checkbox" class="delete-checkbox" data-index="${index}">
-      </div>
-    `;
-    todoPostContainer.innerHTML += postHTML;
-  });
+    todoPosts.forEach((post, index) => {
+        postsHTML += `
+            <div class="post">
+                <div class="mainHeader">${post.title}</div>
+                <div class="priority">Priority: ${post.priority}</div>
+                <div class="text"><p>${post.content}</p></div>
+                <input type="checkbox" class="delete-checkbox" data-index="${index}">
+            </div>
+        `;
+    });
 
-  // Silme checkbox'larına tıklanma olayı ekle
-  const deleteCheckboxes = document.querySelectorAll(".delete-checkbox");
-  deleteCheckboxes.forEach((checkbox) => {
-    checkbox.addEventListener("click", toggleDeleteCheckbox);
-  });
+    todoPostContainer.innerHTML = postsHTML;
+    attachDeleteEventListeners();
 }
 
-// Fonksiyon: Blog yazma sayfasını açar
+function attachDeleteEventListeners() {
+    document.querySelectorAll(".delete-checkbox").forEach(checkbox => {
+        checkbox.addEventListener("click", toggleDeleteCheckbox);
+    });
+}
+
 function openTodoPage() {
-  const mainPage = document.getElementById("todo-posts");
-  const todoWritingPage = document.getElementById("todo-writing-page");
-
-  mainPage.style.display = "none";
-  todoWritingPage.style.display = "block";
+    document.getElementById("todo-posts").style.display = "none";
+    document.getElementById("todo-writing-page").style.display = "block";
 }
 
-// Fonksiyon: Yazılan blogu ana sayfaya ekler
 function saveTodo() {
-  const titleInput = document.getElementById("todo-title");
-  const contentInput = document.getElementById("todo-content");
+    const titleInput = document.getElementById("todo-title");
+    const contentInput = document.getElementById("todo-content");
+    const prioritySelect = document.getElementById("todo-priority");
 
-  const newTodo = {
-    title: titleInput.value,
-    content: contentInput.value,
-  };
+    todoPosts.push({
+        title: titleInput.value,
+        content: contentInput.value,
+        priority: prioritySelect.value,
+        delete: false // Initialize with delete flag as false
+    });
 
-  todoPosts.push(newTodo);
-
-  const mainPage = document.getElementById("todo-posts");
-  const todoWritingPage = document.getElementById("todo-writing-page");
-
-  mainPage.style.display = "block";
-  todoWritingPage.style.display = "none";
-
-  saveToLocalStorage(); // Verileri local storage'a kaydedelim
-
-  displayTodoPosts(); // Blog yazılarını ana sayfaya ekleyelim (güncel liste)
-
-  // Yazıları ekledikten sonra formu temizleyelim
-  titleInput.value = "";
-  contentInput.value = "";
+    sortPostsByPriority();
+    togglePages();
+    saveToLocalStorage();
+    displayTodoPosts();
+    clearForm(titleInput, contentInput, prioritySelect);
 }
 
-// Fonksiyon: Verileri local storage'a kaydeder
+function togglePages() {
+    document.getElementById("todo-posts").style.display = "block";
+    document.getElementById("todo-writing-page").style.display = "none";
+}
+
 function saveToLocalStorage() {
-  localStorage.setItem("todoPosts", JSON.stringify(todoPosts));
+    try {
+        localStorage.setItem("todoPosts", JSON.stringify(todoPosts));
+    } catch (e) {
+        console.error("Error saving to localStorage", e);
+    }
 }
 
-// Fonksiyon: Silme checkbox'larını açar/kapatır
 function toggleDeleteCheckbox(event) {
-  const index = event.target.getAttribute("data-index");
-  todoPosts[index].delete = event.target.checked;
+    const index = event.target.getAttribute("data-index");
+    todoPosts[index].delete = event.target.checked;
 }
 
-// Fonksiyon: Seçili blogları siler
 function deleteSelectedPosts() {
-  todoPosts = todoPosts.filter((post) => !post.delete);
-  saveToLocalStorage(); // Seçilen postları sildikten sonra local storage'ı güncelle
-  displayTodoPosts(); // Blog yazılarını ana sayfaya ekleyelim (güncel liste)
+    todoPosts = todoPosts.filter(post => !post.delete);
+    saveToLocalStorage();
+    displayTodoPosts();
 }
 
-// Sayfa yüklendiğinde çalışacak fonksiyon
-document.addEventListener("DOMContentLoaded", function () {
-  // Local storage'dan verileri çekelim (eğer varsa)
-  const storedTodoPosts = localStorage.getItem("todoPosts");
-  if (storedTodoPosts) {
-    todoPosts = JSON.parse(storedTodoPosts);
-  }
+function clearForm(titleInput, contentInput, prioritySelect) {
+    titleInput.value = "";
+    contentInput.value = "";
+    prioritySelect.value = "Medium";
+}
 
-  displayTodoPosts(); // Blog yazılarını ana sayfaya ekleyelim
+function sortPostsByPriority() {
+    const priorityValues = { "High": 1, "Medium": 2, "Low": 3 };
+    todoPosts.sort((a, b) => priorityValues[a.priority] - priorityValues[b.priority]);
+}
 
-  const addTodoButton = document.getElementById("add-todo-button");
-  addTodoButton.addEventListener("click", openTodoPage);
+function initApp() {
+    const storedTodoPosts = localStorage.getItem("todoPosts");
+    if (storedTodoPosts) {
+        todoPosts = JSON.parse(storedTodoPosts);
+    }
+    sortPostsByPriority();
+    displayTodoPosts();
+    document.getElementById("add-todo-button").addEventListener("click", openTodoPage);
+    document.getElementById("save-todo-button").addEventListener("click", saveTodo);
+    document.getElementById("delete-posts-button").addEventListener("click", deleteSelectedPosts);
+}
 
-  const saveTodoButton = document.getElementById("save-todo-button");
-  saveTodoButton.addEventListener("click", saveTodo);
-
-  const deletePostsButton = document.getElementById("delete-posts-button");
-  deletePostsButton.addEventListener("click", deleteSelectedPosts);
-});
+document.addEventListener("DOMContentLoaded", initApp);
