@@ -92,13 +92,14 @@ header {
   justify-content: center;
   align-items: center;
   height: fit-content;
+  font-family: "Poppins", sans-serif;
 }
 
 .post {
+  position: relative;
   max-width: 100%;
   min-width: 50%;
   padding: 0.5em;
-  position: relative;
   cursor: pointer;
   border-radius: 5px;
   border-style: ridge;
@@ -307,6 +308,19 @@ option {
   border-radius: 5px;
   border: 1px solid #000000;
   margin: 10px;
+}
+
+.priority {
+  display: flex;
+  text-align: right;
+  justify-content: end;
+  border-radius: 5px;
+  font-weight: bolder !important;
+  background-color: #ffffff;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
 }
 
 .priority-high {
