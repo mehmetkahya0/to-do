@@ -290,3 +290,33 @@ input[type="checkbox"]:checked::before {
   text-decoration: none !important;
   font-size: smaller !important;
 }
+
+select {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  margin: 10px;
+  width: 52%;
+  margin-bottom: 2rem;
+}
+
+option {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  margin: 10px;
+}
+
+.priority-high {
+  color: red;
+}
+
+.priority-medium {
+  color: orange;
+}
+
+.priority-low {
+  color: green;
+}
