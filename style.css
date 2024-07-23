@@ -20,6 +20,19 @@
   cursor: pointer;
 }
 
+header {
+  text-align: center;
+  font-weight: bolder;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
 .x {
   display: block;
   position: fixed;
@@ -33,14 +46,6 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
-}
-
-header {
-  text-align: center;
-  font-weight: bolder;
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .contact {
@@ -132,6 +137,13 @@ header {
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  transition: 0.1s ease all;
+}
+
+#add-todo-button:hover {
+  background-color: #007bff;
+  filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.5));
+  transition: 0.1s ease all;
 }
 
 #delete-posts-button {
@@ -146,6 +158,13 @@ header {
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  transition: 0.1s ease all;
+}
+
+#delete-posts-button:hover {
+  background-color: #ff2600;
+  filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.5));
+  transition: 0.1s ease all;
 }
 
 #todo-writing-page {
@@ -290,6 +309,11 @@ input[type="checkbox"]:checked::before {
   background-color: #000000;
   text-decoration: none !important;
   font-size: smaller !important;
+}
+
+.privacy a:hover {
+  background-color: #000000;
+  filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.5));
 }
 
 select {
