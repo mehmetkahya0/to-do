@@ -14,21 +14,62 @@
         <h1><i class="fas fa-tasks"></i> To-Do</h1>
     </header>
     <main>
+        <!-- Search and Filter Section -->
+        <div class="controls-section">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search tasks..." class="search-input">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="high">High</button>
+                <button class="filter-btn" data-filter="medium">Medium</button>
+                <button class="filter-btn" data-filter="low">Low</button>
+            </div>
+        </div>
+
         <div id="todo-posts" class="content"></div>
         <div id="todo-controls">
-            <button id="add-todo-button" class="add">+</button>
-            <button id="delete-posts-button" class="delete">x</button>
+            <button id="add-todo-button" class="floating-btn add-btn" title="Add new task (Ctrl+N)">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button id="delete-posts-button" class="floating-btn delete-btn" title="Delete selected tasks">
+                <i class="fas fa-trash"></i>
+            </button>
         </div>
-        <div id="todo-writing-page" class="hidden">
-            <h1>Create a Task</h1>
-            <input type="text" id="todo-title" placeholder="Header">
-            <textarea id="todo-content" placeholder="Content"></textarea>
-            <select id="todo-priority">
-              <option value="High">Priority: High</option>
-              <option value="Medium" selected>Priority: Medium</option>
-              <option value="Low">Priority: Low</option>
-          </select>
-            <button id="save-todo-button">Save</button>
+        <div id="todo-writing-page" class="modal-overlay hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2><i class="fas fa-plus-circle"></i> Create New Task</h2>
+                    <button class="close-btn" id="close-modal">&times;</button>
+                </div>
+                <form class="todo-form">
+                    <div class="form-group">
+                        <label for="todo-title">Task Title</label>
+                        <input type="text" id="todo-title" placeholder="Enter task title..." maxlength="100">
+                        <span class="char-count">0/100</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="todo-content">Description</label>
+                        <textarea id="todo-content" placeholder="Add task description (optional)..." maxlength="500"></textarea>
+                        <span class="char-count">0/500</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="todo-priority">Priority Level</label>
+                        <select id="todo-priority">
+                            <option value="High">🔴 High Priority</option>
+                            <option value="Medium" selected>🟡 Medium Priority</option>
+                            <option value="Low">🟢 Low Priority</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancel-todo-button" class="btn btn-secondary">Cancel</button>
+                        <button type="button" id="save-todo-button" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Save Task
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
     <footer>

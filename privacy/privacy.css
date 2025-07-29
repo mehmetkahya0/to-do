@@ -1,35 +1,166 @@
-:root{
-    background-color: rgba(0, 0, 0, 0.902);
-    color: #fff;
-    font-family: monospace;
-    width: 100%;
-    height: 100vh;
+:root {
+    /* Ana tema ile uyumlu renk paleti */
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --text-primary: #000000;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --background: rgba(243, 231, 192, 0.902);
+    --background-secondary: #f8fafc;
+    --border-color: #e2e8f0;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Typography */
+    --font-family: 'Poppins', sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    
+    /* Spacing */
+    --spacing-4: 1rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-12: 3rem;
+    
+    /* Border Radius */
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
 }
 
-.container{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: var(--spacing-4);
+}
+
+/* Header Container */
+.container {
     display: flex;
-    max-width: 80%;
-    min-width: 50%;
-    border: 5px solid;
-    margin: auto;
-    padding: 2rem ;
-    max-height: 90%;
-    min-height: 50%;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto var(--spacing-8);
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-8);
+    text-align: center;
+}
+
+.container p {
+    font-size: var(--font-size-3xl);
+    font-weight: bold;
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    border-radius: 10px;
-
+    gap: var(--spacing-4);
 }
 
-.text{
-    max-width: 70%;
+.container p::before {
+    content: '🔒';
+    font-size: var(--font-size-2xl);
+}
+
+/* Content Container */
+.text {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-8);
     word-wrap: break-word;
-    overflow: hidden!important;
-    border: 1px solid;
-    padding: 20px;
-    margin: auto;
-    line-height: normal;
+    line-height: 1.7;
     white-space: pre-line;
-    margin-top: 10vh;
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+}
+
+/* Navigation */
+.nav-back {
+    position: fixed;
+    top: var(--spacing-4);
+    left: var(--spacing-4);
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    z-index: 1000;
+    min-width: auto;
+}
+
+.nav-back:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+}
+
+.nav-back::before {
+    content: '←';
+    font-size: var(--font-size-base);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: var(--spacing-4) 1rem;
+    }
+    
+    .container {
+        padding: var(--spacing-6);
+        margin-bottom: var(--spacing-6);
+    }
+    
+    .container p {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .text {
+        padding: var(--spacing-6);
+        font-size: var(--font-size-sm);
+    }
+    
+    .nav-back {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-bottom: var(--spacing-4);
+        align-self: flex-start;
+        padding: 6px 10px;
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .container p {
+        font-size: var(--font-size-xl);
+    }
+    
+    .text {
+        padding: var(--spacing-4);
+    }
 }
